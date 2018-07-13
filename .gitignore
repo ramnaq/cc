@@ -1,1 +1,7 @@
 materials/
+
+*.class
+*.o
+
+*/*.class
+*/*.o
