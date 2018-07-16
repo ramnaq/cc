@@ -1,3 +1,7 @@
+/*
+https://br.spoj.com/problems/TENTA/
+*/
+
 import java.util.Scanner;
 
 class Tentativas {
@@ -9,28 +13,17 @@ class Tentativas {
     int t = 0;
 
     void lerTestes() {
-        Scanner sc = new Scanner(System.in);
-        int num_figs;
-        boolean entradaDados = true;
+        Scanner scan = new Scanner(System.in);
 
-        while (entradaDados) {
-            String teste = System.console().readLine();
-            num_figs = teste.charAt(0) - (int) '0';
+        for (;;) {
+           int n = scan.nextInt();
+           if (n == 0) break;
 
-            if (num_figs == 0) {
-                entradaDados = false;
-                continue;
-            } else if (t > MAX_FIGS) {
-                System.exit(-1);
-            }
+           figuras[t][0] = n;
+           for (int i = 1; i <= n; ++i)
+               figuras[t][i] = scan.nextInt();
 
-            figuras[t][0] = num_figs;
-            String[] figuras_t = teste.split(" ");
-            for (int i = 1; i < figuras_t.length; ++i) {
-                figuras[t][i] = Integer.parseInt(figuras_t[i]);
-            }
-
-            t++;
+           t++;
         }
     }
 
