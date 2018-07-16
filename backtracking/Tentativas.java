@@ -42,7 +42,7 @@ class Tentativas {
         }
 
         for (int i = 1; i <= tamanho; i++) {
-            if (!contains(ordenacoes, figuras[teste][i])) {
+            if (!contains(figuras[teste][i])) {
                 ordenacoes[n] = figuras[teste][i];
                 gerarOrdenacoes(teste, n-1);
                 ordenacoes[n] = 0;
@@ -56,9 +56,9 @@ class Tentativas {
         System.out.println();
     }
 
-    boolean contains(int[] vector, int x) {
-        for (int i = 0; i < vector.length; ++i)
-            if (vector[i] == x) return true;
+    boolean contains(int x) {
+        for (int i = 0; i < ordenacoes.length; ++i)
+            if (ordenacoes[i] == x) return true;
         return false;
     }
 
