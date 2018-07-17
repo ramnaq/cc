@@ -1,0 +1,25 @@
+/*
+solução top-down, pois começamos de n e resolvemos n-1, n-2...
+solução se inicia com sua versão maior.
+
+top-down: pensando na árvore comum (f(n) (f(n-1) (f(n-2)) (f(n-3))) (f(n-2)))...
+
+bottom-up: ordenação topologica dos sub-problemas.
+*/
+
+// top-down
+fib(n)
+	if n <= 1 return n
+	if memo[n] != 0 return memo[n]
+	memo[n] = fib(n-1) + fib(n-2)
+
+complexidade: TETA(n)
+
+
+// bottom-up
+fib(n)
+	memo[0] = 0
+	memo[1] = 1
+	for i=2 até n
+		memo(i) = fib(i-1) + fib(i-2)
+	return memo[n]
